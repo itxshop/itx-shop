@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ITX Shop — অনলাইন শপ</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#" aria-label="ITX Shop Home"><span class="brand-mark">ITX</span><span>SHOP<span class="dot">.</span></span></a>
+  <form id="searchForm" class="search"><input id="searchInput" type="search" placeholder="পণ্য খুঁজুন..." aria-label="পণ্য খুঁজুন"><button aria-label="Search">⌕</button></form>
+  <div class="head-actions"><button id="loginOpen" class="text-btn">লগইন</button><button id="cartOpen" class="cart-btn">🛒 <span>কার্ট</span> <b id="cartCount">0</b></button></div>
+</header>
+<nav class="nav"><a href="#home">হোম</a><a href="#products">সব পণ্য</a><a href="#notice">নোটিশ</a><a href="#admin">অ্যাডমিন ডেমো</a></nav>
+<main>
+<section id="home" class="hero">
+  <div class="hero-copy"><span class="eyebrow">ITX SHOP-এ স্বাগতম</span><h1>স্মার্ট শপিং,<br><em>স্মার্ট জীবন।</em></h1><p>পছন্দের পণ্য বেছে নিন সহজে। নতুন কালেকশন ও দারুণ দামের পণ্য এক জায়গায়।</p><a class="primary-btn" href="#products">পণ্য দেখুন <span>→</span></a><div class="hero-stats"><div><b>১০০%</b><small>সহজ কেনাকাটা</small></div><div><b>নতুন</b><small>কালেকশন</small></div><div><b>২৪/৭</b><small>অনলাইন অ্যাক্সেস</small></div></div></div>
+  <div class="hero-art"><div class="circle c1"></div><div class="circle c2"></div><div class="hero-product">🎧</div><div class="float-card fc1">✦ জনপ্রিয় পণ্য</div><div class="float-card fc2"><small>শুরু মাত্র</small><strong>৳ ৫৯৯</strong></div><div class="hero-caption">TECH • STYLE • DAILY</div></div>
+</section>
+<section class="benefits"><div><span>🚚</span><p><b>সহজ ডেলিভারি</b><small>আপনার সুবিধামতো</small></p></div><div><span>🔒</span><p><b>নিরাপদ শপিং</b><small>সুরক্ষিত কেনাকাটার অভিজ্ঞতা</small></p></div><div><span>💬</span><p><b>কাস্টমার সাপোর্ট</b><small>প্রয়োজনে যোগাযোগ করুন</small></p></div><div><span>↩</span><p><b>সহজ যোগাযোগ</b><small>অর্ডারের আগে জেনে নিন</small></p></div></section>
+<section id="notice" class="notice"><div><span class="notice-icon">📢</span><b>দোকানের নোটিশ</b><span id="noticeText">ITX Shop ডেমোতে স্বাগতম! অর্ডার দেওয়ার আগে পণ্যের বিবরণ যাচাই করুন।</span></div></section>
+<section id="products" class="products-section"><div class="section-head"><div><span class="eyebrow">আপনার পছন্দ</span><h2>জনপ্রিয় পণ্য</h2><p>আপনার দৈনন্দিন জীবনের জন্য বাছাই করা কিছু পণ্য</p></div><select id="categoryFilter" aria-label="ক্যাটাগরি"><option value="all">সব ক্যাটাগরি</option><option value="tech">টেক</option><option value="fashion">ফ্যাশন</option><option value="home">হোম</option></select></div>
+<div id="productGrid" class="product-grid"></div><p id="emptyState" class="empty hidden">কোনো পণ্য পাওয়া যায়নি। অন্য নামে সার্চ করুন।</p></section>
+
+<section id="account" class="admin-section">
+  <div class="section-head"><div><span class="eyebrow">আপনার অ্যাকাউন্ট</span><h2>লগইন / রেজিস্ট্রেশন</h2><p>অর্ডার দিতে অ্যাকাউন্ট তৈরি করুন অথবা লগইন করুন।</p></div></div>
+  <div class="admin-grid">
+    <form id="authForm" class="panel"><h3 id="authHeading">অ্যাকাউন্টে প্রবেশ</h3>
+      <label>ইমেইল<input id="authEmail" type="email" required autocomplete="email" placeholder="you@example.com"></label>
+      <label>পাসওয়ার্ড<input id="authPassword" type="password" required minlength="8" autocomplete="current-password" placeholder="কমপক্ষে ৮ অক্ষর"></label>
+      <label id="authNameWrap" class="hidden">আপনার নাম<input id="authName" type="text" autocomplete="name" placeholder="পূর্ণ নাম"></label>
+      <div class="form-row"><button id="signInBtn" class="primary-btn" type="submit">লগইন</button><button id="signUpBtn" class="primary-btn" type="button">নতুন অ্যাকাউন্ট</button></div>
+      <button id="signOutBtn" class="text-btn hidden" type="button">লগআউট</button><p id="authStatus" class="small-note">Supabase সেটআপ করার পর অ্যাকাউন্ট চালু হবে।</p>
+    </form>
+    <form id="checkoutForm" class="panel"><h3>চেকআউট / অর্ডার</h3>
+      <label>কাস্টমারের নাম<input id="customerName" required placeholder="আপনার নাম"></label>
+      <label>মোবাইল নম্বর<input id="customerPhone" required inputmode="tel" pattern="[0-9+ -]{8,16}" placeholder="01XXXXXXXXX"></label>
+      <label>সম্পূর্ণ ডেলিভারি ঠিকানা<textarea id="customerAddress" required rows="2" placeholder="বাড়ি, রোড, এলাকা, জেলা"></textarea></label>
+      <label>পেমেন্ট পদ্ধতি<select id="paymentMethod"><option value="cod">ক্যাশ অন ডেলিভারি</option><option value="bkash">বিকাশ (ম্যানুয়াল যাচাই)</option><option value="nagad">নগদ (ম্যানুয়াল যাচাই)</option></select></label>
+      <label id="paymentRefWrap" class="hidden">Transaction ID / রেফারেন্স<input id="paymentRef" maxlength="100" placeholder="পেমেন্ট করলে Transaction ID দিন"></label>
+      <p class="small-note">বিকাশ/নগদে পেমেন্টের আগে দোকানের যাচাইকৃত নম্বর প্রকাশ করতে হবে। এই টেমপ্লেটে স্বয়ংক্রিয় পেমেন্ট গেটওয়ে নেই।</p>
+      <button class="primary-btn" type="submit">অর্ডার কনফার্ম করুন</button>
+    </form>
+  </div>
+</section>
+
+<section class="newsletter"><div><span class="eyebrow">আপডেট থাকুন</span><h2>নতুন পণ্যের খবর পেতে চান?</h2><p>এই ডেমো ফর্মে ইমেইল জমা হয় না; এটি শুধু ডিজাইন প্রিভিউ।</p></div><form id="newsletterForm"><input type="email" placeholder="আপনার ইমেইল" required><button class="primary-btn">সাবস্ক্রাইব</button></form></section>
+<section id="admin" class="admin-section">
+<div class="section-head"><div><span class="eyebrow">ম্যানেজমেন্ট</span><h2>অ্যাডমিন প্যানেল</h2><p>শুধু অনুমোদিত অ্যাডমিন পণ্য, নোটিশ ও অর্ডার পরিচালনা করতে পারবেন।</p></div><span id="adminBadge" class="demo-pill">লগইন প্রয়োজন</span></div>
+<div id="adminLocked" class="panel"><p>অ্যাডমিন হিসেবে লগইন করলে এখানে ম্যানেজমেন্ট টুল দেখা যাবে। প্রথম অ্যাডমিন তৈরি করতে SETUP.md-এর নির্দেশনা অনুসরণ করুন।</p></div>
+<div id="adminTools" class="hidden">
+<div class="admin-grid">
+<form id="addProductForm" class="panel"><h3>নতুন পণ্য যোগ করুন</h3><label>পণ্যের নাম<input id="pName" required maxlength="160" placeholder="যেমন: Wireless Headphone"></label><div class="form-row"><label>দাম (৳)<input id="pPrice" type="number" min="1" step="1" required placeholder="999"></label><label>ক্যাটাগরি<input id="pCategory" required maxlength="80" placeholder="ইলেকট্রনিক্স"></label></div><label>পণ্যের ছবি URL<input id="pImage" type="url" placeholder="https://..."></label><label>বিবরণ<textarea id="pDescription" rows="2" maxlength="2000"></textarea></label><label>স্টক<input id="pStock" type="number" min="0" step="1" value="10" required></label><button class="primary-btn" type="submit">+ পণ্য যোগ করুন</button></form>
+<form id="noticeForm" class="panel"><h3>নোটিশ আপডেট</h3><label>নোটিশের লেখা<textarea id="noticeInput" rows="4" maxlength="1000" required placeholder="দোকানের নোটিশ"></textarea></label><button class="primary-btn" type="submit">নোটিশ আপডেট করুন</button></form>
+</div>
+<div class="panel" style="margin-top:18px"><h3>সাম্প্রতিক অর্ডার</h3><button id="refreshOrders" type="button" class="primary-btn">অর্ডার রিফ্রেশ করুন</button><div id="adminOrders" class="order-list">অর্ডার লোড হয়নি।</div></div>
+</div></section>
+</main>
+<footer><a class="brand footer-brand" href="#"><span class="brand-mark">ITX</span><span>SHOP<span class="dot">.</span></span></a><p>আপনার অনলাইন শপিংয়ের সহজ ঠিকানা।</p><small>© <span id="year"></span> ITX Shop. Demo storefront.</small></footer>
+<div id="toast" class="toast" role="status"></div>
+<div id="modalBackdrop" class="modal-backdrop hidden"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button id="modalClose" class="modal-close" aria-label="বন্ধ করুন">×</button><div id="modalContent"></div></div></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body></html>
